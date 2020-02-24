@@ -32,6 +32,12 @@ extern "C" {
 
     pub fn dispatch_release(object: dispatch_object_t);
 
+    pub fn dispatch_get_context(object: dispatch_object_t) -> *mut c_void;
+
+    pub fn dispatch_set_context(object: dispatch_object_t, context: *mut c_void);
+
+    pub fn dispatch_set_finalizer_f(object: dispatch_object_t, finalizer: dispatch_function_t);
+
     pub fn dispatch_async_f(
         queue: dispatch_queue_t,
         context: *mut c_void,
