@@ -8,6 +8,8 @@ fn main() {
     queue.run_sync(|| println!("2"));
     queue.run_async(|| println!("3"));
     queue.run_async(|| println!("4"));
+    queue.run_final(|| println!("5"));
+    queue.run_async(|| println!("6"));
     // Call sync here to block the current thread and make sure all the tasks are done.
-    queue.run_sync(|| println!("5"));
+    queue.run_sync(|| println!("7"));
 }
